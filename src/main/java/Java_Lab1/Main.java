@@ -1,17 +1,39 @@
 package Java_Lab1;
 
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
-public class Main {
-    static void main() {
-        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-        // to see how IntelliJ IDEA suggests fixing it.
-        IO.println(String.format("Hello and welcome!"));
+import java.util.HashSet;
+import java.util.Set;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Arrays;
 
-        for (int i = 1; i <= 5; i++) {
-            //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-            // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-            IO.println("i = " + i);
+public class Main {
+
+    public static void main(String[] args) {
+
+        String[] inputWords = {"java", "hello", "world", "unique", "code", "list"};
+
+        List<String> uniqueWordsList = new ArrayList<>();
+
+        for (String word : inputWords) {
+            if (hasAllUniqueChars(word)) {
+                uniqueWordsList.add(word);
+            }
         }
+
+        String[] resultArray = uniqueWordsList.toArray(new String[0]);
+
+        System.out.println("Слова з унікальними символами:");
+        System.out.println(Arrays.toString(resultArray));
+    }
+
+    public static boolean hasAllUniqueChars(String word) {
+
+        Set<Character> uniqueChars = new HashSet<>();
+
+        for (char c : word.toCharArray()) {
+            uniqueChars.add(c);
+        }
+
+        return word.length() == uniqueChars.size();
     }
 }
