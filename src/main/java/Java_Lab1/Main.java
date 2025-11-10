@@ -10,7 +10,7 @@ public class Main {
 
     public static void main(String[] args) {
 
-        String[] inputWords = {"java", "hello", "world", "unique", "code", "list"};
+        String[] inputWords = {"hello", "java", "and", "world", "unique", "code", "list"};
 
         List<String> uniqueWordsList = new ArrayList<>();
 
